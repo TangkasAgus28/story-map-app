@@ -1,17 +1,90 @@
-APP_URL=https://story-map-dicoding.netlify.app
+APP_URL=https://tangkasagus28.github.io/story-map-app/
 MAP_SERVICE_API_KEY=Tidak diperlukan (menggunakan OpenStreetMap)
 
-CATATAN IMPLEMENTASI:
-1. Map Service: Leaflet.js dengan OpenStreetMap (gratis, tidak perlu API key)
-2. Tile Layers: Street Map dan Satellite View (ArcGIS World Imagery)
-3. Semua form input telah berasosiasi dengan label menggunakan atribut for dan id yang sesuai
-4. Skip to content link tersedia untuk aksesibilitas keyboard navigation
-5. Aplikasi responsive di 375px (mobile), 768px (tablet), dan 1024px (desktop)
-6. View Transition API diimplementasikan dengan custom CSS animation
-7. Camera capture menggunakan MediaDevices API dengan proper cleanup (stopTracks)
+CATATAN IMPLEMENTASI SUBMISSION 2:
 
-CARA MENJALANKAN:
+=== KRITERIA 1: MEMPERTAHANKAN KRITERIA SUBMISSION 1 ===
+✅ SPA dengan hash routing dan view transitions
+✅ Menampilkan data dari API dengan marker di peta
+✅ Multiple tile layers (Street Map & Satellite)
+✅ Fitur tambah story dengan upload foto dan camera capture
+✅ Aksesibilitas: semantic HTML, label pada input, skip to content, responsive
+✅ Keyboard navigation untuk semua elemen interaktif
+
+=== KRITERIA 2: PUSH NOTIFICATION (ADVANCED +4PTS) ===
+✅ Push notification terimplementasi melalui Service Worker
+✅ Notifikasi dinamis menggunakan data dari push event
+✅ Toggle button untuk enable/disable push notification di home page
+✅ Action button pada notifikasi untuk navigasi ke halaman
+✅ Menggunakan VAPID public key dari API Dicoding
+
+Cara test:
+1. Login ke aplikasi
+2. Klik tombol "Enable Notifications" di home page
+3. Allow permission notification dari browser
+4. Tambah story baru → notifikasi akan muncul
+
+=== KRITERIA 3: PWA & OFFLINE MODE (ADVANCED +4PTS) ===
+✅ Web App Manifest dengan icon, theme color, dan display standalone
+✅ Service Worker untuk caching static assets dan API responses
+✅ Install prompt muncul di mobile dan desktop
+✅ Screenshot aplikasi (mobile 375x667 & desktop 1920x1080)
+✅ Shortcuts untuk quick access ke halaman Add Story dan Home
+✅ Aplikasi dapat diakses offline dengan cache strategy Network First untuk API
+✅ Data API ter-cache dan tetap muncul saat offline
+
+Cara test offline:
+1. Buka aplikasi online terlebih dahulu
+2. Buka DevTools → Application → Service Workers → centang "Offline"
+3. Refresh page → app shell tetap muncul
+4. Stories yang sudah pernah dibuka tetap muncul (dari cache)
+
+=== KRITERIA 4: INDEXEDDB (ADVANCED +4PTS) ===
+✅ Fitur Favorites menggunakan IndexedDB untuk menyimpan story favorit
+✅ CRUD operations: Create (add favorite), Read (view favorites), Delete (remove favorite)
+✅ Fitur interaktif: Search dan Sort (by name, by date, ascending/descending)
+✅ Clear all favorites dengan konfirmasi
+✅ Favorites dapat diakses offline karena tersimpan di IndexedDB
+
+Cara test:
+1. Di home page, klik tombol "Add to Favorites" pada story card
+2. Buka halaman "My Favorites"
+3. Test search: ketik nama story di search box
+4. Test sort: pilih sort option (Newest/Oldest/Name A-Z/Name Z-A)
+5. Test delete: klik tombol "Remove" pada favorite card
+6. Test clear all: klik tombol "Clear All"
+
+=== KRITERIA 5: DEPLOYMENT ===
+✅ Deployed ke GitHub Pages
+✅ URL: https://tangkasagus28.github.io/story-map-app/
+✅ Dapat diakses secara publik
+✅ PWA installable dari deployed URL
+✅ Push notification berfungsi di production
+
+TEKNOLOGI YANG DIGUNAKAN:
+- HTML5, CSS3, JavaScript ES6+
+- Vite (build tool)
+- Leaflet.js (interactive maps)
+- IDB library (IndexedDB wrapper)
+- Story API by Dicoding
+- Service Worker API
+- Push API
+- IndexedDB API
+- Web App Manifest
+- GitHub Pages (hosting)
+
+CARA MENJALANKAN LOKAL:
 1. npm install
-2. npm run dev (development mode)
-3. npm run build (production build)
-4. npm run preview (test production)
+2. npm run dev
+3. Buka http://localhost:5173
+
+CARA BUILD & DEPLOY:
+1. npm run build
+2. npm run deploy
+
+AKUN TEST:
+Email: test@example.com
+Password: 12345678
+
+REPOSITORY GITHUB:
+https://github.com/TangkasAgus28/story-map-app
