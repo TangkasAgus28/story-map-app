@@ -1,0 +1,17 @@
+APP_URL=https://story-map-dicoding.netlify.app
+MAP_SERVICE_API_KEY=Tidak diperlukan (menggunakan OpenStreetMap)
+
+CATATAN IMPLEMENTASI:
+1. Map Service: Leaflet.js dengan OpenStreetMap (gratis, tidak perlu API key)
+2. Tile Layers: Street Map dan Satellite View (ArcGIS World Imagery)
+3. Semua form input telah berasosiasi dengan label menggunakan atribut for dan id yang sesuai
+4. Skip to content link tersedia untuk aksesibilitas keyboard navigation
+5. Aplikasi responsive di 375px (mobile), 768px (tablet), dan 1024px (desktop)
+6. View Transition API diimplementasikan dengan custom CSS animation
+7. Camera capture menggunakan MediaDevices API dengan proper cleanup (stopTracks)
+
+CARA MENJALANKAN:
+1. npm install
+2. npm run dev (development mode)
+3. npm run build (production build)
+4. npm run preview (test production)
