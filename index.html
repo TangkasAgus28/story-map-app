@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Share your stories with the world using Story Map application. Pin your memories on an interactive map."
+    />
+    <meta name="author" content="Dicoding Student" />
+    <meta name="theme-color" content="#3498db" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/story-map-app/manifest.json" />
+
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Story Map" />
+    <link rel="apple-touch-icon" href="/story-map-app/favicon.png" />
+
+    <link rel="shortcut icon" href="/story-map-app/favicon.png" type="image/png" />
+    <title>Story Map - Share Your Stories on Interactive Map</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+      integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+      integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="module" crossorigin src="/story-map-app/assets/main-WnIr44zX.js"></script>
+    <link rel="stylesheet" crossorigin href="/story-map-app/assets/main-BbieH4hI.css">
+  </head>
+  <body>
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+      <div class="main-header container">
+        <a class="brand-name" href="#/" aria-label="Story Map home page">
+          <span aria-hidden="true">🗺️</span> Story Map
+        </a>
+        <nav
+          id="navigation-drawer"
+          class="navigation-drawer"
+          aria-label="Main navigation"
+          role="navigation"
+        >
+          <ul id="nav-list" class="nav-list" role="list">
+            <li role="listitem"><a href="#/">Home</a></li>
+            <li role="listitem"><a href="#/favorites">Favorites</a></li>
+            <li role="listitem"><a href="#/about">About</a></li>
+          </ul>
+        </nav>
+        <button
+          id="drawer-button"
+          class="drawer-button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navigation-drawer"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+      <!-- Content will be loaded here dynamically -->
+    </main>
+
+    <footer
+      role="contentinfo"
+      style="
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      "
+    >
+      <p>
+        &copy; 2024 Story Map. All rights reserved. | Built for Dicoding
+        Submission
+      </p>
+    </footer>
+  </body>
+</html>
