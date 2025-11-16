@@ -2,8 +2,8 @@
   "name": "Story Map - Share Your Stories",
   "short_name": "Story Map",
   "description": "Share your stories with the world on an interactive map",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/story-map-app/",
+  "scope": "/story-map-app/",
   "display": "standalone",
   "background_color": "#2c3e50",
   "theme_color": "#3498db",
@@ -41,7 +41,7 @@
       "name": "Add Story",
       "short_name": "Add",
       "description": "Quickly add a new story",
-      "url": "./#/add-story",
+      "url": "/story-map-app/#/add-story",
       "icons": [
         {
           "src": "./favicon.png",
@@ -54,7 +54,7 @@
       "name": "View Stories",
       "short_name": "Stories",
       "description": "View all stories on map",
-      "url": "./",
+      "url": "/story-map-app/",
       "icons": [
         {
           "src": "./favicon.png",
