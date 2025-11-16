@@ -282,8 +282,17 @@ export default class HomePage {
       btn.addEventListener("click", async (e) => {
         e.stopPropagation();
 
+        // Store reference to button before async operations
+        const button = e.currentTarget;
+
+        // Check if button still exists in DOM
+        if (!button || !document.body.contains(button)) {
+          console.warn("Button no longer in DOM");
+          return;
+        }
+
         try {
-          const storyId = e.currentTarget.dataset.storyId;
+          const storyId = button.dataset.storyId;
           const story = this.stories.find((s) => s.id === storyId);
 
           if (!story) {
@@ -302,20 +311,56 @@ export default class HomePage {
           // Add to favorites
           await IDBHelper.addFavorite(story);
 
-          // Update button UI
-          e.currentTarget.textContent = "✅ Added to Favorites";
-          e.currentTarget.disabled = true;
-          e.currentTarget.style.backgroundColor = "#27ae60";
+          // Update button UI - with existence check
+          if (button && document.body.contains(button)) {
+            button.textContent = "✅ Added to Favorites";
+            button.disabled = true;
+            button.style.backgroundColor = "#27ae60";
 
-          // Reset button after 2 seconds
+            // Reset button after 2 seconds - with existence check
+            setTimeout(() => {
+              if (button && document.body.contains(button)) {
+                button.textContent = "⭐ Add to Favorites";
+                button.disabled = false;
+                button.style.backgroundColor = "";
+              }
+            }, 2000);
+          }
+
+          // Show success message in a safer way
+          const successMsg = document.createElement("div");
+          successMsg.textContent = "✅ Added to favorites!";
+          successMsg.style.cssText = `
+          position: fixed;
+          top: 80px;
+          right: 20px;
+          background: #27ae60;
+          color: white;
+          padding: 15px 25px;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          z-index: 10000;
+          font-weight: 600;
+        `;
+          document.body.appendChild(successMsg);
+
           setTimeout(() => {
-            e.currentTarget.textContent = "⭐ Add to Favorites";
-            e.currentTarget.disabled = false;
-            e.currentTarget.style.backgroundColor = "";
-          }, 2000);
+            if (successMsg && document.body.contains(successMsg)) {
+              successMsg.remove();
+            }
+          }, 3000);
         } catch (error) {
           console.error("Add favorite error:", error);
-          alert("❌ Failed to add to favorites: " + error.message);
+
+          // Safe error display
+          const errorMsg = "Failed to add to favorites. Please try again.";
+
+          // Try to show alert, but don't crash if it fails
+          try {
+            alert("❌ " + errorMsg);
+          } catch (alertError) {
+            console.error("Could not show alert:", alertError);
+          }
         }
       });
     });
