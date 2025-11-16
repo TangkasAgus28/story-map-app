@@ -1,8 +1,9 @@
-const CACHE_NAME = "story-map-v1";
-const API_CACHE_NAME = "story-map-api-v1";
+const CACHE_NAME = "story-map-v2";
+const API_CACHE_NAME = "story-map-api-v2";
 
-// Get base path for GitHub Pages
-const BASE_PATH = "/story-map-app";
+// Determine base path
+const BASE_PATH =
+  self.location.hostname === "localhost" ? "" : "/story-map-app";
 
 // Assets to cache immediately
 const urlsToCache = [
@@ -20,7 +21,9 @@ self.addEventListener("install", (event) => {
       .open(CACHE_NAME)
       .then((cache) => {
         console.log("Service Worker: Caching static assets");
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache).catch((error) => {
+          console.error("Service Worker: Cache addAll failed:", error);
+        });
       })
       .then(() => self.skipWaiting())
   );
