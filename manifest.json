@@ -1,63 +1,79 @@
 {
-  "name": "Story Map - Share Your Stories",
+  "name": "Story Map - Share Your Stories on Interactive Map",
   "short_name": "Story Map",
-  "description": "Share your stories with the world on an interactive map",
+  "description": "Share your stories with the world on an interactive map. Pin your memories, explore others' experiences, and connect through location-based storytelling.",
   "start_url": "/story-map-app/",
   "scope": "/story-map-app/",
   "display": "standalone",
   "background_color": "#2c3e50",
   "theme_color": "#3498db",
-  "orientation": "portrait-primary",
+  "orientation": "any",
+  "categories": ["social", "travel", "photography"],
+  "prefer_related_applications": false,
   "icons": [
     {
-      "src": "./favicon.png",
+      "src": "/story-map-app/images/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "./favicon.png",
+      "src": "/story-map-app/images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/story-map-app/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/story-map-app/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
     {
-      "src": "./images/screenshot-mobile.png",
+      "src": "/story-map-app/images/screenshot-mobile.png",
       "sizes": "375x667",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "narrow",
+      "label": "Story Map on mobile device"
     },
     {
-      "src": "./images/screenshot-desktop.png",
+      "src": "/story-map-app/images/screenshot-desktop.png",
       "sizes": "1920x1080",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "Story Map on desktop"
     }
   ],
   "shortcuts": [
     {
-      "name": "Add Story",
-      "short_name": "Add",
-      "description": "Quickly add a new story",
+      "name": "Add New Story",
+      "short_name": "Add Story",
+      "description": "Quickly add a new story to the map",
       "url": "/story-map-app/#/add-story",
       "icons": [
         {
-          "src": "./favicon.png",
+          "src": "/story-map-app/images/icon-192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "View Stories",
-      "short_name": "Stories",
-      "description": "View all stories on map",
-      "url": "/story-map-app/",
+      "name": "My Favorites",
+      "short_name": "Favorites",
+      "description": "View your favorite stories",
+      "url": "/story-map-app/#/favorites",
       "icons": [
         {
-          "src": "./favicon.png",
+          "src": "/story-map-app/images/icon-192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
